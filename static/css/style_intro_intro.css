@@ -1,0 +1,276 @@
+.carousel{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity .5s;
+}
+.back{
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    opacity: 0;
+    padding: 5px 15px;
+    border:  #F94248 solid 2px;
+    font-size: 20px;
+    font-weight: 600;
+    color:  #F94248;
+    background-color: transparent;
+    border-radius: 20px;
+    transition: opacity .5s,background-color .25s linear,color .25s linear;
+    cursor: pointer;
+}
+.back:hover{
+    background-color:  #F94248;
+    color: #fff;
+}
+.back:focus{
+    outline: none;
+}
+.carousel_img{
+    display: flex;
+    transform: translateX(0);
+    transition: transform .25s ;
+    height: 600px;
+}
+.carousel_img div{
+    width: 400px;
+    height: 560px;
+    overflow: hidden;
+    margin-right: 80px;
+    position: relative;
+    box-shadow: 15px 20px 30px #383838;
+    border-radius: 20px;
+    filter: grayscale(100%);
+    transition: filter .5s linear;
+    cursor: pointer;
+}
+.carousel_img img{
+    height: 100%;
+    position: absolute;
+}
+.carousel_img div:hover{
+    filter: none;
+}
+.carousel_btn{
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: #F94248;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.carousel_btn:focus{
+    outline: none;
+}
+.carousel_btn svg{
+    width: 60%;
+    fill: #fff;
+}
+.carousel .pre{
+    left: 5px;
+}
+.carousel .next{
+    right: 5px;
+}
+.opacity{
+    opacity: 0;
+}
+
+.carousel_img div:before{
+    content: "";
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 180%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ff9900;
+    width: 100%;
+    height: 90px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+.carousel_img div:hover:before{
+    opacity: 70%;
+}
+.carousel_img div:nth-child(1){
+    visibility: hidden;
+}
+.carousel_img div:nth-child(2)::before{
+    content: "侯硐貓村";
+}
+.carousel_img div:nth-child(2) img{
+    left: -230px;
+}
+.carousel_img div:nth-child(3)::before{
+    content: "內灣老街";
+}
+.carousel_img div:nth-child(3) img{
+    left: -130px;
+}
+.carousel_img div:nth-child(4)::before{
+    content: "十分瀑布";
+}
+.carousel_img div:nth-child(4) img{
+    right: -80px;
+}
+.carousel_img div:nth-child(5)::before{
+    content: "十分老街";
+}
+.carousel_img div:nth-child(6)::before{
+    content: "台東鐵道藝術村";
+}
+.carousel_img div:nth-child(6) img{
+    right: -50px;
+}
+.carousel_img div:nth-child(7)::before{
+    content: "台泥DAKA園區";
+}
+.carousel_img div:nth-child(7) img{
+    right: -40px;
+}
+.carousel_img div:nth-child(8)::before{
+    content: "國立科學工藝博物館";
+}
+.carousel_img div:nth-child(8) img{
+    left: -50px;
+}
+.carousel_img div:nth-child(9)::before{
+    content: "大甲鎮瀾宮";
+}
+.carousel_img div:nth-child(9) img{
+    right: -220px;
+}
+.carousel_img div:nth-child(10)::before{
+    content: "奇美博物館";
+}
+.carousel_img div:nth-child(10) img{
+    right: -320px;
+}
+.carousel_img div:nth-child(11)::before{
+    content: "客家圓樓";
+}
+.carousel_img div:nth-child(11) img{
+    right: -80px;
+}
+.carousel_img div:nth-child(12)::before{
+    content: "崎頂子母隧道";
+}
+.carousel_img div:nth-child(12) img{
+    left: -90px;
+}
+.carousel_img div:nth-child(13)::before{
+    content: "扇形車庫";
+}
+.carousel_img div:nth-child(13) img{
+    left: -120px;
+}
+.carousel_img div:nth-child(14)::before{
+    content: "星巴克新豐門市";
+}
+.carousel_img div:nth-child(14) img{
+    left: -80px;
+}
+.carousel_img div:nth-child(15)::before{
+    content: "林先生廟";
+}
+.carousel_img div:nth-child(15) img{
+    left: -220px;
+}
+.carousel_img div:nth-child(16)::before{
+    content: "橋頭糖廠";
+}
+.carousel_img div:nth-child(16) img{
+    left: -60px;
+}
+.carousel_img div:nth-child(17)::before{
+    content: "櫻木平交道";
+}
+.carousel_img div:nth-child(17) img{
+    left: -200px;
+}
+.carousel_img div:nth-child(18)::before{
+    content: "水里蛇窯";
+}
+.carousel_img div:nth-child(19)::before{
+    content: "池上故事館";
+}
+.carousel_img div:nth-child(19) img{
+    left: -160px;
+}
+.carousel_img div:nth-child(20)::before{
+    content: "海洋科技博物館";
+}
+.carousel_img div:nth-child(20) img{
+    left: -130px;
+}
+.carousel_img div:nth-child(21)::before{
+    content: "深澳鐵道自行車";
+}
+.carousel_img div:nth-child(22)::before{
+    content: "湯圍溝溫泉公園";
+}
+.carousel_img div:nth-child(23)::before{
+    content: "玉里舊鐵橋";
+}
+.carousel_img div:nth-child(24)::before{
+    content: "福井食堂";
+}
+.carousel_img div:nth-child(24) img{
+    left: -200px;
+}
+.carousel_img div:nth-child(25)::before{
+    content: "福隆海水浴場";
+}
+.carousel_img div:nth-child(26)::before{
+    content: "羅東林業園區";
+}
+.carousel_img div:nth-child(27)::before{
+    content: "臺中舊火車站";
+}
+.carousel_img div:nth-child(27) img{
+    right: -70px;
+}
+.carousel_img div:nth-child(28)::before{
+    content: "菁桐老街";
+}
+.carousel_img div:nth-child(28) img{
+    left: -230px;
+}
+.carousel_img div:nth-child(29)::before{
+    content: "蓮池潭";
+}
+.carousel_img div:nth-child(30)::before{
+    content: "赤崁樓";
+}
+.carousel_img div:nth-child(30) img{
+    left: -250px;
+}
+.carousel_img div:nth-child(31)::before{
+    content: "鐵道部園區";
+}
+.carousel_img div:nth-child(31) img{
+    left: -300px;
+}
+.carousel_img div:nth-child(32)::before{
+    content: "阿里山森林鐵路";
+}
+.carousel_img div:nth-child(32) img{
+    left: -180px;
+}
+

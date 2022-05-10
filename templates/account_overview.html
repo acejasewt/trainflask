@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳戶總覽</title>
+    <link rel="stylesheet" href="static/css/style_overview.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="static/img/Group 1.png" alt="logo"></a>
+        </div>
+        <div class="header_bar">
+            <ul>
+                <li>
+                    <a href="index"><button class="header_btn header_btn_first header_btn_hover">首頁</button></a>
+                </li>
+                <li>
+                    <a href="booking">
+                        <button class="header_btn header_btn_hover">火車訂票</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="intro"><button class="header_btn header_btn_hover">車站景點</button></a>
+                </li>
+                <li>
+                    <a href="knowledge"><button class="header_btn header_btn_hover">台鐵知識王</button></a>
+                </li>
+            </ul>
+            <div class="btn_acc">
+                <button class="header_btn btn_img">                    
+                    <img class="userimg" src="static/img/usrimg.jpg" alt="usrimg">
+                    <div class="dropdown">
+                        <ul>
+                            <li class="dropdown_link"><a href="overview">帳戶總覽</a></li>
+                            <li class="dropdown_link"><a href="logout">登出</a></li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="contentbox">
+        <section class="funcbar">
+            <div class="funcusr">
+                <img src="static/img/usrimg.jpg" alt="usr">
+            </div>
+            <a href="overview">
+                <div class="barlist barfocus">
+                    <div class="i">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="barword">帳戶總覽</div>
+                </div>
+            </a>
+            <a href="bookinghis">
+                <div class="barlist">
+                    <div class="i">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="barword">訂票紀錄</div>
+                </div>
+            </a>
+            <a href="change">
+                <div class="barlist">
+                    <div class="i">
+                        <i class="fas fa-pen"></i>
+                    </div>
+                    <div class="barword">修改個人資料</div>
+                </div>
+            </a>
+        </section>
+        <section class="content">
+            <div class="contenttitle">帳戶總覽</div>
+            <div class="subtitle">個人訊息</div>
+            <div class="infobox">
+                <div class="info">
+                    <div class="infotitle">姓名</div>
+                    <div class="infocontent">{{session['realnm']}}</div>
+                </div>
+                <div class="info">
+                    <div class="infotitle">電話</div>
+                    <div class="infocontent">{{session['phone']}}</div>
+                </div>
+                <div class="info">
+                    <div class="infotitle">信箱</div>
+                    <div class="infocontent">{{session['mail']}}</div>
+                </div>
+            </div>
+            <div class="editbox">
+                <a href="change" class="editlink"><buttonc class="editbtn">修改個人資料</button></a>
+            </div>
+            <div>
+                <div class="subtitle subtil2">即將到來的旅程</div>
+                {% for his in session["bookhis"] %}
+                <div class="jrtitlebox">
+                    <div class="leftjrbox">
+                        <div class="locbox">
+                            <div>{{his["dep"]}}</div>
+                            <div class="arrowloc">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div>{{his["des"]}}</div>
+                        </div>
+                        <div class="datebox">2021/05/21</div>
+                        <div class="tmebox">
+                            <div>{{his["dep_time"]}}</div>
+                            <div class="tmei">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div>{{his["des_time"]}}</div>
+                            <div class="train">{{his["train_type"]}}</div>
+                        </div>
+                    </div>
+                    <div class="ticbox">
+                        {% if his["full"]!=0 or his["full"]!="" %}
+                        <div class="ticket">全票{{his["full"]}}張</div>
+                        {% endif %}
+                        {% if his["child"]!=0 or his["child"]!="" %}
+                        <div class="ticket">兒童票{{his["child"]}}張</div>
+                        {% endif %}
+                        {% if his["eld"]!=0 or his["eld"]!="" %}
+                        <div class="ticket">敬老票{{his["eld"]}}張</div>
+                        {% endif %}
+                        <div class="rmtic"><a href="#">退票/換票</a></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</body>
+</html>

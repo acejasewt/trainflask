@@ -1,0 +1,132 @@
+.carousel3{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity .5s;
+}
+.back3{
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    opacity: 0;
+    padding: 5px 15px;
+    border:  #F94248 solid 2px;
+    font-size: 20px;
+    font-weight: 600;
+    color:  #F94248;
+    background-color: transparent;
+    border-radius: 20px;
+    transition: opacity .5s,background-color .25s linear,color .25s linear;
+    cursor: pointer;
+}
+.back3:hover{
+    background-color:  #F94248;
+    color: #fff;
+}
+.back3:focus{
+    outline: none;
+}
+.carousel_img3{
+    display: flex;
+    transform: translateX(0);
+    transition: transform .25s ;
+    height: 600px;
+}
+.carousel_img3 div{
+    width: 400px;
+    height: 560px;
+    overflow: hidden;
+    margin-right: 80px;
+    position: relative;
+    box-shadow: 15px 20px 30px #383838;
+    border-radius: 20px;
+    filter: grayscale(100%);
+    transition: filter .5s linear;
+    cursor: pointer;
+}
+
+.carousel_img3 img{
+    height: 100%;
+    position: absolute;
+}
+.carousel_img3 div:hover{
+    filter: none;
+}
+.carousel_btn3{
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: #F94248;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.carousel_btn3:focus{
+    outline: none;
+}
+.carousel_btn3 svg{
+    width: 60%;
+    fill: #fff;
+}
+.carousel3 .pre{
+    left: 5px;
+}
+.carousel3 .next{
+    right: 5px;
+}
+
+.carousel_img3 div:before{
+    content: "";
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 180%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ff9900;
+    width: 100%;
+    height: 90px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+.carousel_img3 div:hover:before{
+    opacity: 70%;
+}
+.carousel_img3 div:nth-child(1){
+   visibility: hidden;
+}
+.carousel_img3 div:nth-child(2)::before{
+    content: "富岡車輛基地";
+}
+.carousel_img3 div:nth-child(3)::before{
+    content: "桃林鐵馬道";
+}
+.carousel_img3 div:nth-child(3) img{
+    right: -180px;
+}
+.carousel_img3 div:nth-child(4)::before{
+    content: "臺東舊站";
+}
+.carousel_img3 div:nth-child(5)::before{
+    content: "魚藤坪斷橋";
+}
+.carousel_img3 div:nth-child(5) img{
+    right: -55%;
+}
+.carousel_img3 div:nth-child(6){
+    visibility: hidden;
+}

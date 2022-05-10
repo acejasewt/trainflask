@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鐵路心旅行-台鐵知識王</title>
+    <link rel="stylesheet" href="static/css/style_know.css">
+    <link rel="stylesheet" href="static/css/style_know_intro.css">
+    <link rel="stylesheet" href="static/css/style_know_test.css">
+    <link rel="stylesheet" href="static/css/style_know_his.css">
+    <link rel="stylesheet" href="static/css/style_know_introbox.css">
+</head>
+
+<body>
+    <div class="bg_images">
+    </div>
+    <div class="content">
+        <header>
+            <div class="header_row">
+                <div class="logo">
+                    <a href="index"><img src="static/img/Group 1.png" alt="logo"></a>
+                </div>
+                <div class="header_bar">
+                    <ul>
+                        <li>
+                            <a href="index"><button class="header_btn header_btn_first">首頁</button></a>
+                        </li>
+                        <li>
+                            <a href="booking"><button class="header_btn header_btn_hover">火車訂票</button></a>
+                        </li>
+                        <li>
+                            <a href="intro"><button class="header_btn header_btn_hover">車站景點</button></a>
+                        </li>
+                        <li>
+                            <a href="knowledge"><button
+                                    class="header_btn header_btn_hover clr_white">台鐵知識王</button></a>
+                        </li>
+                        {% if not session['user'] %}
+                        <li>
+                            <a href="login"><button class="header_btn header_btn_hover">會員登入</button></a>
+                        </li>
+                    </ul>
+                    {% else %}
+                    </ul>
+                    <div class="btn_acc">
+                        <button class="header_btn btn_img">                    
+                            <img class="userimg" src="static/img/usrimg.jpg" alt="usrimg">
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown_link"><a href="overview">帳戶總覽</a></li>
+                                    <li class="dropdown_link"><a href="logout">登出</a></li>
+                                </ul>
+                            </div>
+                        </button>
+                    </div>
+                    {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="imagebox" id="imagebox">
+        <div class="image" onclick="visibility1()">
+            <img src="static/img/know1.png" alt="">
+            <div class="img_word">台鐵歷史</div>
+        </div>
+        <div class="image" onclick="visibility2()">
+            <img src="static/img/know2.png" alt="">
+            <div class="img_word">列車介紹</div>
+        </div>
+        <div class="image" onclick="visibility3()">
+            <img src="static/img/know3.png" alt="">
+            <div class="imgbg"></div>
+            <div class="img_word">知識測驗</div>
+        </div>
+    </div>
+    <div class="carouselbox">
+        <button class="back" id="back" onclick="back()">回上一頁</button>
+        <div class="carousel" id="carousel">
+            <button class="carousel_btn pre" id="pre">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Layer_1" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;"
+                    xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M464.344,207.418l0.768,0.168H135.888l103.496-103.724c5.068-5.064,7.848-11.924,7.848-19.124    c0-7.2-2.78-14.012-7.848-19.088L223.28,49.538c-5.064-5.064-11.812-7.864-19.008-7.864c-7.2,0-13.952,2.78-19.016,7.844    L7.844,226.914C2.76,231.998-0.02,238.77,0,245.974c-0.02,7.244,2.76,14.02,7.844,19.096l177.412,177.412    c5.064,5.06,11.812,7.844,19.016,7.844c7.196,0,13.944-2.788,19.008-7.844l16.104-16.112c5.068-5.056,7.848-11.808,7.848-19.008    c0-7.196-2.78-13.592-7.848-18.652L134.72,284.406h329.992c14.828,0,27.288-12.78,27.288-27.6v-22.788    C492,219.198,479.172,207.418,464.344,207.418z" />
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <div class="carousel_img">
+                <div><img src="static/img/white.png" id="lastclone" class="opacity" alt=""></div>
+                <div onclick="introin(this)" id="0"><img src="static/img/train/DR2800型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="1"><img src="static/img/train/DR3100型.JPG" alt=""></div>
+                <div onclick="introin(this)" id="2"><img src="static/img/train/E1000型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="3"><img src="static/img/train/E200型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="4"><img src="static/img/train/E400型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="5"><img src="static/img/train/EMU1200型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="6"><img src="static/img/train/EMU300型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="7"><img src="static/img/train/EMU500型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="8"><img src="static/img/train/EMU600型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="9"><img src="static/img/train/EMU700型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="10"><img src="static/img/train/EMU800型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="11"><img src="static/img/train/R100型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="12"><img src="static/img/train/R150型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="13"><img src="static/img/train/R20型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="14"><img src="static/img/train/TEMU1000型.jpg" alt=""></div>
+                <div onclick="introin(this)" id="15"><img src="static/img/train/TEMU2000型.jpg" alt=""></div>
+                <div><img src="static/img/white.png" id="firstclone" class="opacity" alt=""></div>
+            </div>
+            <button class="carousel_btn next" id="next">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Layer_1" x="0px" y="0px" viewBox="0 0 492.004 492.004"
+                    style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z" />
+                        </g>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="know" id="knowtest">
+        <div class="testbox">
+            <a href="test1">
+                <img src="static/img/test1.png" alt="">
+                <div class="testbg"></div>
+                <div class="testword">初階</div>
+            </a>
+        </div>
+        <div class="testbox">
+            <a href="test2">
+                <img src="static/img/test2.png" alt="">
+                <div class="testbg"></div>
+                <div class="testword">進階</div>
+            </a>
+        </div>
+        <button class="back2" id="back2" onclick="back2()">回上一頁</button>
+    </div>
+    <div class="hisbox" id="hisbox">
+        <div class="hiscontent">
+            <button class="back3" id="back3" onclick="back3()">回上一頁</button>
+            <div class="hiscontentbox">
+                <div class="contentcard card1">
+                    <div class="hisintro1">
+                        <div class="hisword">
+                            清政府於1887年成立「全臺鐵路商務總局」，負責籌辦臺灣鐵路的興建。1891年，首段營運路線由臺北大稻埕至基隆通車。後續延伸至新竹的縱貫線路段於1893年通車，當時路線經過今日臺北大橋及三重、新莊。唯1891年巡撫劉銘傳去職，繼任巡撫邵友濂以臺灣財政困難，奏請清廷中止臺灣鐵路的興建，故路線在臺灣被日本接收前，僅完成基隆─新竹段。
+                        </div>
+                    </div>
+                </div>
+                <div class="contentcard card2">
+                    <div class="hisintro1">
+                        <div class="hisword hiswordaj">
+                            1895年進入日治時代後，臺灣鐵路由日軍接管，1899年，臺灣總督府交通局鐵道部於同年成立，計畫全面興建西部縱貫鐵路。1901年，臺灣的第一條支線鐵路淡水線通車。1907年，屏東線的打狗（後改稱高雄港）至九曲堂路段通車，1908年西部縱貫鐵路全線貫通，1914年，屏東線九曲堂－阿猴（屏東）段通車，1920年，王田支線（海線的一部分及成追線）王田─清水間路段通車，隔年，集集線完工啟用，1922年，海線竹南－清水間，及追分－彰化間路段通車，王田支線名稱取消，海線正式取代山線成為縱貫線主線。1923年，屏東至南州的屏東線路段通車，1924年，基隆和蘇澳之間的宜蘭線全線通車，1926年，舊臺東線花蓮港－臺東路段全線通車，1941年，南州至枋寮的屏東線路段通車
+                        </div>
+                    </div>
+                </div>
+                <div class="contentcard card3">
+                    <div class="hisintro1">
+                        <div class="hisword">
+                            1945年二戰結束後，臺灣進入中華民國時期，鐵道部改組為「臺灣鐵路管理委員會」，之後於1948年改組為「臺灣鐵路管理局」，1951年，內灣線全線通車，1980年，連接蘇澳和花蓮的北迴線通車，1988年，淡水線停駛，原路線拆除改建為臺北捷運淡水線。
+                            <br><br>
+                            進入21世紀，臺鐵開始進行捷運化計畫，將西部幹線轉型為長程運輸與短程通勤並重，並著手提升東部幹線的運能。在捷運化方面，台鐵增設多個通勤車站來縮短站距，以便民眾利用就近車站。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="hismvbtn hisprev" onclick="mvprev()" id="hisprev">
+            <svg class="mvbtnsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 492 492"
+                style="enable-background:new 0 0 492 492;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path
+                            d="M464.344,207.418l0.768,0.168H135.888l103.496-103.724c5.068-5.064,7.848-11.924,7.848-19.124    c0-7.2-2.78-14.012-7.848-19.088L223.28,49.538c-5.064-5.064-11.812-7.864-19.008-7.864c-7.2,0-13.952,2.78-19.016,7.844    L7.844,226.914C2.76,231.998-0.02,238.77,0,245.974c-0.02,7.244,2.76,14.02,7.844,19.096l177.412,177.412    c5.064,5.06,11.812,7.844,19.016,7.844c7.196,0,13.944-2.788,19.008-7.844l16.104-16.112c5.068-5.056,7.848-11.808,7.848-19.008    c0-7.196-2.78-13.592-7.848-18.652L134.72,284.406h329.992c14.828,0,27.288-12.78,27.288-27.6v-22.788    C492,219.198,479.172,207.418,464.344,207.418z" />
+                    </g>
+                </g>
+            </svg>
+        </button>
+        <button class="hismvbtn hisnext" onclick="mvnext()" id="hisnext">
+            <svg class="mvbtnsvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 492.004 492.004"
+                style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path
+                            d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z" />
+                    </g>
+                </g>
+            </svg>
+        </button>
+    </div>
+    <div class="introbox" id="introbox">
+        <div class="relintrobox">
+            <button class="backintro" id="backintro" onclick="backtointro()">回上一頁</button>
+            <div class="introcard">
+                <div class="relintrocard">
+                    <div class="introimg">
+                        <img src="static/img/train/DR2800型.jpg" alt="" id="introimg">
+                    </div>
+                    <div class="introbox_word" id="introbox_word">產地：日本<br>製造商：東急車輛製造<br>用於：自強號<br>投入服務：1982年<br></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/script_introin.js"></script>
+    <script src="static/js/script_know.js"></script>
+    <script src="static/js/script_know_intro.js"></script>
+    <script src="static/js/script_hisbox.js"></script>
+</body>
+
+</html>

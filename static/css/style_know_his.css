@@ -1,0 +1,111 @@
+.hisbox{
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 80%;
+    padding: 0 15%;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.hiscontent{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.hiscontentbox{
+    position: absolute;
+    top: 15%;
+    width: 300%;
+    height: 85%;
+    display: flex;
+}
+.back3{
+    position: absolute;
+    top: 6%;
+    left: 0%;
+    padding: 5px 15px;
+    border:  #F94248 solid 2px;
+    font-size: 20px;
+    font-weight: 600;
+    color:  #F94248;
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .5s,background-color .25s linear,color .25s linear;
+}
+.back3:hover{
+    background-color:  #F94248;
+    color: #fff;
+}
+.back3:focus{
+    outline: none;
+}
+.hisintro1{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.contentcard{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+.card1{
+    background-image: url("../img/hiscard1.jpg") ;
+}
+.card2{
+    background-image: url("../img/hiscard2.jpg") ;
+}
+.card3{
+    background-image: url("../img/hiscard3.jpg") ;
+}
+.hisword{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    width: 60%;
+    padding: 1% 2%;
+    background-color: #000;
+    opacity: 50%;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 600;
+}
+.hiswordaj{
+    width: 85%;
+}
+.mvbtnsvg{
+    width: 60px;
+    fill:#F94248;
+    transition: fill .25s ease-in-out;
+}
+.hismvbtn{
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    border: 5px solid  #F94248;
+    background-color:  transparent;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color .25s ease-in-out;
+}
+.hismvbtn:focus{
+    outline: none;
+}
+.hismvbtn:hover{
+    background-color:  #F94248;
+}
+.hismvbtn:hover .mvbtnsvg{
+    fill: #fff;
+}
+.hisprev{
+    left: 8%;
+}
+.hisnext{
+    right: 8%;
+}

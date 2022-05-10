@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初級台鐵知識王</title>
+    <link rel="stylesheet" href="static/css/style_test.css">
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>
+                <a href="index"><button class="header_btn">首頁</button></a>
+            </li>
+            <li>
+                <a href="booking">
+                    <button class="header_btn">火車訂票</button>
+                </a>
+            </li>
+            <li>
+                <a href="intro"><button class="header_btn">車站景點</button></a>
+            </li>
+            <li>
+                <a href="knowledge"><button class="header_btn btnbg">台鐵知識王</button></a>
+            </li>
+        </ul>
+    </header>
+    <div class="contentbox">
+        <div class="contentimg">
+            <img src="static/img/test1.png" alt="">
+        </div>
+        <div class="contentest" id="contentest">
+            <div class="contentquestion" id="question">
+                請問台鐵所使用的是以下何種軌距?
+            </div>
+            <div class="answerbtnbox">
+                <button class="answerbtn" onclick="clickthis(this)" id="answerbtn1">762mm<br>(二英尺六英寸鐵軌)</button>
+                <button class="answerbtn" onclick="clickthis(this)" id="answerbtn2">1,000mm<br>(米軌)</button>
+                <button class="answerbtn" onclick="clickthis(this)" id="answerbtn3">1,067mm<br>(三英尺六英寸鐵軌)</button>
+                <button class="answerbtn" onclick="clickthis(this)" id="answerbtn4">1,435mm<br>(標準軌)</button>
+            </div>
+            <div class="btncontrol">
+                <button class="btncontroler back" onclick="back()" id="back">回上一題</button>
+                <button class="btncontroler nxtbtn" onclick="next()" id ="next">下一題</button>
+            </div>
+            <div class="loadingbox">
+                <div class="number" id="number">1</div>
+                <div class="subloadingbox">
+                    <div class="load light"></div>
+                    <div class="load pink" id="pink"></div>
+                </div>
+            </div>
+        </div>
+        <div class="contentcorrect" id="contentcorrect">
+            <div class="correctbox">
+                <div class="correctword" id="correctword">0</div>
+            </div>
+            <div class="nxtcor">
+                <a href="index"><button class="btncontroler nxtbtn downbtn">回到主頁</button></a>            </div>
+        </div>
+    </div>
+    <script src="static/js/script_test.js"></script>
+</body>
+
+</html>

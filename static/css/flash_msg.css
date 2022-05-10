@@ -1,0 +1,24 @@
+.loginmsg{
+    position: absolute;
+    top: 25%;
+    left: 13%;
+    font-weight: 600;
+    color: #F94248;
+    font-size: 14px;
+}
+.registermsg{
+    position: absolute;
+    top: 13.5%;
+    left: 10%;
+    font-weight: 600;
+    color: #F94248;
+    font-size: 14px;
+}
+.changemsg{
+    font-weight: 600;
+    color: #F94248;
+    font-size: 16px;
+    position: absolute;
+    top: 22%;
+    left: 11%;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳戶總覽</title>
+    <link rel="stylesheet" href="static/css/style_overview.css">
+    <link rel="stylesheet" href="static/css/flash_msg.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index"><img src="static/img/Group 1.png" alt="logo"></a>
+        </div>
+        <div class="header_bar">
+            <ul>
+                <li>
+                    <a href="index"><button class="header_btn header_btn_first header_btn_hover">首頁</button></a>
+                </li>
+                <li>
+                    <a href="booking">
+                        <button class="header_btn header_btn_hover">火車訂票</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="intro"><button class="header_btn header_btn_hover">車站景點</button></a>
+                </li>
+                <li>
+                    <a href="knowledge"><button class="header_btn header_btn_hover">台鐵知識王</button></a>
+                </li>
+            </ul>
+            <div class="btn_acc">
+                <button class="header_btn btn_img">                    
+                    <img class="userimg" src="static/img/usrimg.jpg" alt="usrimg">
+                    <div class="dropdown">
+                        <ul>
+                            <li class="dropdown_link"><a href="overview">帳戶總覽</a></li>
+                            <li class="dropdown_link"><a href="">登出</a></li>
+                        </ul>
+                    </div>
+                </button>
+
+            </div>
+        </div>
+    </header>
+    <div class="contentbox">
+        <section class="funcbar">
+            <div class="funcusr">
+                <img src="static/img/usrimg.jpg" alt="usr">
+            </div>
+            <a href="overview">
+                <div class="barlist">
+                    <div class="i">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="barword">帳戶總覽</div>
+                </div>
+            </a>
+            <a href="bookinghis">
+                <div class="barlist">
+                    <div class="i">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="barword">訂票紀錄</div>
+                </div>
+            </a>
+            <a href="change">
+                <div class="barlist barfocus">
+                    <div class="i">
+                        <i class="fas fa-pen"></i>
+                    </div>
+                    <div class="barword">修改個人資料</div>
+                </div>
+            </a>
+        </section>
+        <form action="#" method="POST" class="content">
+            <div class="contenttitle">修改個人資料</div>
+            <div class="changemsg">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for msg in messages %}
+                        <p>{{msg}}</p>
+                    {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="flexbox">
+                <div class="inputbox">
+                    <input class="input" type="text" name="usrname" placeholder="{{session['user']}}">
+                    <div class="inputi">
+                        <i class="fas fa-user"></i>
+                        <h5>用戶者名稱</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flexbox">
+                <div class="inputbox">
+                    <input class="input" type="password" name="pw">
+                    <div class="inputi">
+                        <i class="fas fa-lock"></i>
+                        <h5>新密碼</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flexbox">
+                <div class="inputbox">
+                    <input class="input" type="password" name="repw">
+                    <div class="inputi">
+                        <i class="fas fa-key"></i>
+                        <h5>請再輸入密碼</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flexbox">
+                <div class="inputbox">
+                    <input class="input" type="text" name="rlnm" placeholder="{{session['realnm']}}">
+                    <div class="inputi">
+                        <i class="fas fa-user-check"></i>
+                        <h5>姓名</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flexbox">
+                <div class="inputbox">
+                    <input class="input" type="email" name="mail" placeholder="{{session['mail']}}">
+                    <div class="inputi">
+                        <i class="fas fa-envelope"></i>
+                        <h5>電子郵件</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="flexbox">
+                <div class="inputbox">
+                    <input class="input" type="text" name="phone" placeholder="{{session['phone']}}">
+                    <div class="inputi">
+                        <i class="fas fa-phone-alt"></i>
+                        <h5>電話</h5>
+                    </div>
+                </div>
+            </div>
+           <input type="submit" value="更新資料" class="updbtn">
+        </form>
+    </div>
+    <script src="static/js/script_change.js"></script>
+</body>
+</html>

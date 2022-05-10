@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鐵路心旅行-火車訂票</title>
+    <link rel="stylesheet" href="static/css/style_booking.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index"><img src="static/img/Group 1.png" alt="logo"></a>
+        </div>
+        <div class="header_bar">
+            <ul>
+                <li>
+                    <a href="index"><button class="header_btn header_btn_first">首頁</button></a>
+                </li>
+                <li>
+                    <a href="booking">
+                        <button class="header_btn header_btn_hover clr_white">火車訂票</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="intro"><button class="header_btn header_btn_hover">車站景點</button></a>
+                </li>
+                <li>
+                    <a href="knowledge"><button class="header_btn header_btn_hover">台鐵知識王</button></a>
+                </li>
+                {% if not session['user'] %}
+                <li>
+                    <a href="login"><button class="header_btn header_btn_hover">會員登入</button></a>
+                </li>
+            </ul>
+            {% else %}
+            </ul>
+            <div class="btn_acc">
+                <button class="header_btn btn_img">                    
+                    <img class="userimg" src="static/img/usrimg.jpg" alt="usrimg">
+                    <div class="dropdown">
+                        <ul>
+                            <li class="dropdown_link"><a href="overview">帳戶總覽</a></li>
+                            <li class="dropdown_link"><a href="logout">登出</a></li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+    <div class="adbox">
+        <div class="ad2">
+            <img src="static/img/ad2.png" alt="ad2">
+            <div class="bg_black"></div>
+            <div class="ad_position">
+                <div>不知道去哪裡玩?</div>
+                <a href="intro">
+                    <button>參考網頁景點介紹
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23.91" height="25.399"
+                            viewBox="0 0 23.91 25.399">
+                            <g id="Group_71" data-name="Group 71" transform="translate(-441.439 -379.162)">
+                                <g id="Group_14" data-name="Group 14" transform="translate(1 4.732)">
+                                    <line id="Line_3" data-name="Line 3" x1="12.361" y2="12.361"
+                                        transform="translate(441.5 386.407)" fill="none" stroke="#fff"
+                                        stroke-width="3" />
+                                    <path id="Path_3" data-name="Path 3" d="M12.8,12.567,0,0"
+                                        transform="translate(441.5 375.5)" fill="none" stroke="#fff" stroke-width="3" />
+                                </g>
+                                <g id="Group_15" data-name="Group 15" transform="translate(10 4.732)">
+                                    <line id="Line_3-2" data-name="Line 3" x1="12.361" y2="12.361"
+                                        transform="translate(441.5 386.407)" fill="none" stroke="#fff"
+                                        stroke-width="3" />
+                                    <path id="Path_3-2" data-name="Path 3" d="M12.8,12.567,0,0"
+                                        transform="translate(441.5 375.5)" fill="none" stroke="#fff" stroke-width="3" />
+                                </g>
+                            </g>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="formbox">
+        <form action="#" method="POST">
+            <div class="form">
+                <div class="subformbox">
+                    <div class="subtitle">日期</div>
+                    <input type="date" class="subtitlebox subtitletime">
+                </div>
+                <div class="subformbox">
+                    <div class="subtitle">起訖時間</div>
+                    <div class="timebox">
+                        <input type="time" class="subtitlebox subtitletime begintime">
+                        <input type="time" class="subtitlebox subtitletime endtime">
+                    </div>
+                </div>
+                <div class="subformbox">
+                    <div class="subtitle">出發站</div>
+                    <select class="subtitlebox subtitlenone subtitletime slct" name="departure">
+                        <option value="台北" selected>台北</option>
+                        <option value="新北">新北</option>
+                        <option value="桃園">桃園</option>
+                        <option value="彰化">彰化</option>
+                        <option value="高雄">高雄</option>
+                    </select>
+                </div>
+                <div class="subformbox">
+                    <div class="subtitle">抵達站</div>
+                    <select class="subtitlebox subtitlenone subtitletime slct" name="destination">
+                        <option value="台北">台北</option>
+                        <option value="新北">新北</option>
+                        <option value="桃園">桃園</option>
+                        <option value="彰化">彰化</option>
+                        <option value="高雄" selected>高雄</option>
+                    </select>
+                </div>
+            </div>
+            <div class="notice">
+                <div>※ 臺鐵局不定期微調列車班次，若您欲規劃行程，建議於出發前一週再次查詢時刻表資訊。
+                </div>
+                <div>※ 本系統係提供票價試算參考，實際票價應以列車實際運行里程及現場售票為準。</div>
+            </div>
+            <button type="submit" formmethod="post" class="srch_btn">查詢
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667    S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6    c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z     M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"/>
+                        </g>
+                    </g>
+                    </svg>
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>

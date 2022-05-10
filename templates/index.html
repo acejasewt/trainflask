@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鐵路心旅行首頁</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <div class="content_box">
+        <div class="banner">
+            <img src="static/img/main_bg1.jpg" alt="" class="img1">
+            <div class="images">
+                <img src="static/img/ad.png" alt="ad">
+            </div>
+        </div>
+        <div class="bg_black">
+        </div>
+        <div class="content">
+            <header>
+                <div class="header_row">
+                    <div class="logo">
+                        <a href="index"><img src="static/img/Group 1.png" alt="logo"></a>
+                    </div>
+                    <div class="header_bar">
+                        <ul>
+                            <li>
+                                <a href="index"><button class="header_btn header_btn_first">首頁</button></a>
+                            </li>
+                            <li>
+                                <a href="booking"><button class="header_btn header_btn_hover">火車訂票</button></a>
+                            </li>
+                            <li>
+                                <a href="intro"><button class="header_btn header_btn_hover">車站景點</button></a>
+                            </li>
+                            <li>
+                                <a href="knowledge"><button class="header_btn header_btn_hover">台鐵知識王</button></a>
+                            </li>
+                            {% if not session['user'] %}
+                            <li>
+                                <a href="login"><button class="header_btn header_btn_hover">會員登入</button></a>
+                            </li>
+                        </ul>
+                        {% else %}
+                        </ul>
+                        <div class="btn_acc">
+                            <button class="header_btn btn_img">                    
+                                <img class="userimg" src="static/img/usrimg.jpg" alt="usrimg">
+                                <div class="dropdown">
+                                    <ul>
+                                        <li class="dropdown_link"><a href="overview">帳戶總覽</a></li>
+                                        <li class="dropdown_link"><a href="logout">登出</a></li>
+                                    </ul>
+                                </div>
+                            </button>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+            <div class="images">
+                <img src="static/img/ad.png" alt="ad">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

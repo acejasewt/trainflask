@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員註冊</title>
+    <link rel="stylesheet" href="static/css/style_register.css">
+    <link rel="stylesheet" href="static/css/flash_msg.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+    <div class="registerbox">
+        <a href="login">
+            <button class="back">
+                <svg class="backicon" xmlns="http://www.w3.org/2000/svg" id="Layer" enable-background="new 0 0 64 64" height="512" viewBox="0 0 64 64" width="512"><path d="m54 30h-39.899l15.278-14.552c.8-.762.831-2.028.069-2.828-.761-.799-2.027-.831-2.828-.069l-17.448 16.62c-.755.756-1.172 1.76-1.172 2.829 0 1.068.417 2.073 1.207 2.862l17.414 16.586c.387.369.883.552 1.379.552.528 0 1.056-.208 1.449-.621.762-.8.731-2.065-.069-2.827l-15.342-14.552h39.962c1.104 0 2-.896 2-2s-.896-2-2-2z"/></svg>
+            </button>
+        </a>
+        <div class="registertitle">
+            <h2>會員註冊</h2>
+        </div>
+        <div class="registermsg">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <form action="#" method="POST" class="formbox">
+            <div class="inputbox">
+                <h5>用戶實際姓名</h5>
+                <div class="inputform">
+                    <div class="i">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <input class="input" type="text" name="realname" required>
+                </div>
+            </div>
+            <div class="inputbox">
+                <h5>用戶者名稱</h5>
+                <div class="inputform">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <input class="input" type="text" name="usrname" required>
+                </div>
+            </div>
+            <div class="inputbox">
+                <h5>密碼</h5>
+                <div class="inputform">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <input class="input" type="password" name="usrpw" required>
+                </div>
+            </div>
+            <div class="inputbox">
+                <h5>請再輸入密碼</h5>
+                <div class="inputform">
+                    <div class="i">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <input class="input" type="password" name="checkpw" required>
+                </div>
+            </div>
+            <div class="inputbox">
+                <h5>信箱</h5>
+                <div class="inputform">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <input class="input" type="email" name="mail" required>
+                </div>
+            </div>
+            <div class="inputbox">
+                <h5>電話</h5>
+                <div class="inputform">
+                    <div class="i">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <input class="input" type="text" name="phone" required>
+                </div>
+            </div>
+            <div class="btnupd">
+                <input type="submit" value="註冊" class="registerbtn">
+            </div>
+        </form>
+    </div>
+    <script src="static/js/script_register.js"></script>
+</body>
+</html>

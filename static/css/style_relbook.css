@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft JhengHei";
+}
+h1{
+    display: inline;
+    border-bottom: #ff9900 4px solid;
+}
+form{
+    margin: 0 20%;
+    padding: 2% 5%;
+}
+.subformbox{
+    margin-top: 15px;
+}
+.subformbox h3{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.subformbox span{
+    font-size: smaller;
+    margin: 0 8px;
+}
+.formcontent{
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: #f0f0f0;
+    color: #8e8e8e;
+    font-size: small;
+    border-radius: 3px;
+}
+.flexbox{
+    display: flex;
+    align-items: center;
+}
+.ticketbox{
+    margin-left: 40px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    border: none;
+    background-color: #fff;
+    border-top: 0.5px solid #8e8e8e;
+    border-bottom: 0.5px solid #8e8e8e;
+    cursor: pointer;
+}
+.btnl{
+    border-left: 0.5px solid #8e8e8e;
+}
+.btnr{
+    border-right: 0.5px solid #8e8e8e;
+}
+button:hover{
+    background-color: #f0f0f0;
+}
+input{
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    border: none;
+    border-top: 0.5px solid #8e8e8e;
+    border-bottom: 0.5px solid #8e8e8e;
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.confirm{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+    background-color: #ff9900;
+    border-radius: 20px;
+    border: 2px solid #ff9900;
+    cursor: pointer;
+    transition: transform .3s;
+    margin-left: 10px;
+}
+.confirm:hover{
+    transform: scale(1.05);
+}
+.confirm input{
+    border: none;
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+a{
+    font-size: 13px;
+    color: #8e8e8e;
+    cursor: pointer;  
+}
+a:hover{
+    color: #ff9900;
+    text-decoration: underline;
+}
+.under{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+}

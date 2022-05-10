@@ -1,0 +1,232 @@
+.carousel2{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity .5s;
+}
+.back2{
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    opacity: 0;
+    padding: 5px 15px;
+    border:  #F94248 solid 2px;
+    font-size: 20px;
+    font-weight: 600;
+    color:  #F94248;
+    background-color: transparent;
+    border-radius: 20px;
+    transition: opacity .5s,background-color .25s linear,color .25s linear;
+    cursor: pointer;
+}
+.back2:hover{
+    background-color:  #F94248;
+    color: #fff;
+}
+.back2:focus{
+    outline: none;
+}
+
+.carousel_img2{
+    display: flex;
+    transform: translateX(0);
+    transition: transform .25s ;
+    height: 600px;
+}
+.carousel_img2 div{
+    width: 400px;
+    height: 560px;
+    overflow: hidden;
+    margin-right: 80px;
+    position: relative;
+    box-shadow: 15px 20px 30px #383838;
+    border-radius: 20px;
+    filter: grayscale(100%);
+    transition: filter .5s linear;
+    cursor: pointer;
+}
+
+.carousel_img2 img{
+    height: 100%;
+    position: absolute;
+}
+.carousel_img2 div:hover{
+    filter: none;
+}
+.carousel_btn2{
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: #F94248;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.carousel_btn2:focus{
+    outline: none;
+}
+.carousel_btn2 svg{
+    width: 60%;
+    fill: #fff;
+}
+.carousel2 .pre{
+    left: 5px;
+}
+.carousel2 .next{
+    right: 5px;
+}
+
+.carousel_img2 div:before{
+    content: "";
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 180%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ff9900;
+    width: 100%;
+    height: 90px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+.carousel_img2 div:hover:before{
+    opacity: 70%;
+}
+.carousel_img2 div:nth-child(1){
+    visibility: hidden;
+}
+.carousel_img2 div:nth-child(2)::before{
+    content: "三貂嶺車站";
+}
+.carousel_img2 div:nth-child(3)::before{
+    content: "內獅車站";
+}
+.carousel_img2 div:nth-child(3) img{
+    right: -50px;
+}
+.carousel_img2 div:nth-child(4)::before{
+    content: "八斗子車站";
+}
+.carousel_img div:nth-child(4) img{
+    right: -80px;
+}
+.carousel_img2 div:nth-child(5)::before{
+    content: "勝興車站";
+}
+.carousel_img2 div:nth-child(6)::before{
+    content: "合興車站";
+}
+.carousel_img2 div:nth-child(6) img{
+    right: -50%;
+}
+.carousel_img2 div:nth-child(7)::before{
+    content: "和仁車站";
+}
+.carousel_img2 div:nth-child(7) img{
+    left: -20%;
+}
+.carousel_img2 div:nth-child(8)::before{
+    content: "多良車站";
+}
+.carousel_img2 div:nth-child(8) img{
+    right: -40%;
+}
+.carousel_img2 div:nth-child(9)::before{
+    content: "大華車站";
+}
+.carousel_img2 div:nth-child(9) img{
+    right: -220px;
+}
+.carousel_img2 div:nth-child(10)::before{
+    content: "太麻里車站";
+}
+.carousel_img2 div:nth-child(10) img{
+    right: -60%;
+}
+.carousel_img2 div:nth-child(11)::before{
+    content: "山里車站";
+}
+.carousel_img2 div:nth-child(11) img{
+    right: 0;
+}
+.carousel_img2 div:nth-child(12)::before{
+    content: "崎頂車站";
+}
+.carousel_img2 div:nth-child(12) img{
+    left: -90px;
+}
+.carousel_img2 div:nth-child(13)::before{
+    content: "成功車站";
+}
+.carousel_img2 div:nth-child(13) img{
+    left: -180px;
+}
+.carousel_img2 div:nth-child(14)::before{
+    content: "望古車站";
+}
+.carousel_img2 div:nth-child(14) img{
+    right: -20%;
+}
+.carousel_img2 div:nth-child(15)::before{
+    content: "枋山車站";
+}
+.carousel_img2 div:nth-child(15) img{
+    right: -40%;
+}
+.carousel_img2 div:nth-child(16)::before{
+    content: "牡丹車站";
+}
+.carousel_img2 div:nth-child(16) img{
+    left: -90px;
+}
+.carousel_img2 div:nth-child(17)::before{
+    content: "石城車站";
+}
+.carousel_img2 div:nth-child(17) img{
+    left: -200px;
+}
+.carousel_img2 div:nth-child(18)::before{
+    content: "石榴車站";
+}
+.carousel_img2 div:nth-child(18) img{
+    left: -20%;
+}
+.carousel_img2 div:nth-child(19)::before{
+    content: "石龜車站";
+}
+.carousel_img2 div:nth-child(19) img{
+    left: -160px;
+}
+.carousel_img2 div:nth-child(20)::before{
+    content: "追分車站";
+}
+.carousel_img2 div:nth-child(20) img{
+    left: -180px;
+}
+.carousel_img2 div:nth-child(21)::before{
+    content: "集集車站";
+}
+.carousel_img2 div:nth-child(21) img{
+    left: -50%;
+}
+.carousel_img2 div:nth-child(22){
+    visibility: hidden;
+}
+.carousel_img2 div:nth-child(23){
+    visibility: hidden;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂票</title>
+    <link rel="stylesheet" href="static/css/style_relbook.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <form action="#" method="POST">
+        <h1>火車訂票</h1>
+        <div class="subformbox">
+            <h3>姓名</h3>
+            <div class="formcontent">{{session["getbook"]["rlnm"]}}</div>
+        </div>
+        <div class="subformbox">
+            <h3>日期</h3>
+            <div class="formcontent">{{session["getbook"]["date"]}}</div>
+        </div>
+        <div class="subformbox">
+            <h3>起訖時間</h3>
+            <div class="flexbox">
+                <div class="formcontent">{{session["getbook"]["bgtime"]}}</div>
+                <span>至</span>
+                <div class="formcontent">{{session["getbook"]["edtime"]}}</div>
+            </div>
+        </div>
+        <div class="subformbox">
+            <h3>車種</h3>
+            <div class="formcontent">{{session["getbook"]["train_type"]}}</div>
+        </div>
+        <div class="subformbox">
+            <h3>車次</h3>
+            <div class="formcontent">{{session["getbook"]["train_num"]}}</div>
+        </div>
+        <div class="subformbox">
+            <h3>起訖站</h3>
+            <div class="formcontent">{{session["getbook"]["dep"]}}</div>
+            <span>至</span>
+            <div class="formcontent">{{session["getbook"]["des"]}}</div>
+        </div>
+        <div class="flexbox">
+            <div class="subformbox">
+                <h3>一般票</h3>
+                <div class="flexbox">
+                    <div class="btnl btn">-</div>
+                    <input type="number" min="0" max="6"  value="0" name="adult" required>
+                    <div class="btnr btn">+</div>
+                </div>
+            </div>
+            <div class="subformbox ticketbox">
+                <h3>敬老票</h3>
+                <div class="flexbox">
+                    <div class="btnl btn">-</div>
+                    <input type="number" min="0" max="6"  value="0" name="eld" required>
+                    <div class="btnr btn">+</div>
+                </div>
+            </div>
+            <div class="subformbox ticketbox">
+                <h3>孩童票</h3>
+                <div class="flexbox">
+                    <div class="btnl btn">-</div>
+                    <input type="number" min="0" max="6" value="0" name="child" required>
+                    <div class="btnr btn">+</div>
+                </div>
+            </div>
+        </div>
+        <div class="under">
+            <a onclick="back()">修改訂單資訊</a>
+            <div class="confirm">
+                <input type="submit" value="確認訂票">
+            </div>
+        <div>
+    </form>
+    <script src="static/js/script_rlbk.js"></script>
+</body>
+</html>

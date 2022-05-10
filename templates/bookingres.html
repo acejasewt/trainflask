@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鐵路心旅行-火車訂票</title>
+    <link rel="stylesheet" href="static/css/style_booking.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index"><img src="static/img/Group 1.png" alt="logo"></a>
+        </div>
+        <div class="header_bar">
+            <ul>
+                <li>
+                    <a href="index"><button class="header_btn header_btn_first">首頁</button></a>
+                </li>
+                <li>
+                    <a href="booking">
+                        <button class="header_btn header_btn_hover clr_white">火車訂票</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="intro"><button class="header_btn header_btn_hover">車站景點</button></a>
+                </li>
+                <li>
+                    <a href="knowledge"><button class="header_btn header_btn_hover">台鐵知識王</button></a>
+                </li>
+                {% if not session['user'] %}
+                <li>
+                    <a href="login"><button class="header_btn header_btn_hover">會員登入</button></a>
+                </li>
+            </ul>
+            {% else %}
+            </ul>
+            <div class="btn_acc">
+                <button class="header_btn btn_img">
+                    <img class="userimg" src="static/img/usrimg.jpg" alt="usrimg">
+                    <div class="dropdown">
+                        <ul>
+                            <li class="dropdown_link"><a href="overview">帳戶總覽</a></li>
+                            <li class="dropdown_link"><a href="logout">登出</a></li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+    <div class="adbox">
+        <div class="ad2">
+            <img src="static/img/ad2.png" alt="ad2">
+            <div class="bg_black"></div>
+            <div class="ad_position">
+                <div>不知道去哪裡玩?</div>
+                <a href="intro">
+                    <button>參考網頁景點介紹
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23.91" height="25.399"
+                            viewBox="0 0 23.91 25.399">
+                            <g id="Group_71" data-name="Group 71" transform="translate(-441.439 -379.162)">
+                                <g id="Group_14" data-name="Group 14" transform="translate(1 4.732)">
+                                    <line id="Line_3" data-name="Line 3" x1="12.361" y2="12.361"
+                                        transform="translate(441.5 386.407)" fill="none" stroke="#fff"
+                                        stroke-width="3" />
+                                    <path id="Path_3" data-name="Path 3" d="M12.8,12.567,0,0"
+                                        transform="translate(441.5 375.5)" fill="none" stroke="#fff" stroke-width="3" />
+                                </g>
+                                <g id="Group_15" data-name="Group 15" transform="translate(10 4.732)">
+                                    <line id="Line_3-2" data-name="Line 3" x1="12.361" y2="12.361"
+                                        transform="translate(441.5 386.407)" fill="none" stroke="#fff"
+                                        stroke-width="3" />
+                                    <path id="Path_3-2" data-name="Path 3" d="M12.8,12.567,0,0"
+                                        transform="translate(441.5 375.5)" fill="none" stroke="#fff" stroke-width="3" />
+                                </g>
+                            </g>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="formresult" id="formresult">
+        <a href="booking">
+            <button class="resrh">
+                <svg class="rebtn" xmlns="http://www.w3.org/2000/svg" width="10.723" height="17.786"
+                    viewBox="0 0 10.723 17.786">
+                    <g id="Group_53" data-name="Group 53" transform="translate(1.051 1.07)">
+                        <g id="Group_52" data-name="Group 52" transform="translate(0)">
+                            <line id="Line_3" data-name="Line 3" x2="8.317" y2="8.317"
+                                transform="translate(0.294 7.339)" fill="none" stroke="#fff" stroke-width="3" />
+                            <path id="Path_3" data-name="Path 3" d="M0,8.456,8.611,0" transform="translate(0)"
+                                fill="none" stroke="#fff" stroke-width="3" />
+                        </g>
+                    </g>
+                </svg>
+                重新查詢</button>
+        </a>
+        <div class="notice">
+            <div>※ 臺鐵局不定期微調列車班次，若您欲規劃行程，建議於出發前一週再次查詢時刻表資訊。
+            </div>
+            <div>※ 本系統係提供票價試算參考，實際票價應以列車實際運行里程及現場售票為準。</div>
+        </div>
+        <div class="resultinforbox">
+            <div class="traininforbox">
+                <div class="traininfor">
+                    <div class="traininforword">車種車次</div>
+                </div>
+                <div class="traininfor">
+                    <div class="traininforword">出發時間</div>
+                </div>
+                <div class="traininfor">
+                    <div class="traininforword">抵達時間</div>
+                </div>
+                <div class="traininfor">
+                    <div class="traininforword">行駛時間</div>
+                </div>
+                <div class="traininfor">
+                    <div class="traininforword">全票</div>
+                </div>
+                <div class="traininfor">
+                    <div class="traininforword">孩童票</div>
+                </div>
+                <div class="traininfor">
+                    <div class="traininforword">敬老票</div>
+                </div>
+                <div class="traininfor">
+                    <div class="traininforword">剩餘座位</div>
+                </div>
+                <div class="traininfor">
+                    <div class="traininforword">備註</div>
+                </div>
+            </div>
+            {% for srh in session["srhres"] %}
+            <div class="traininforbox">
+                <div class="traininfor">
+                    <div class="subtraininforword">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            id="Capa_1" x="0px" y="0px" viewBox="0 0 405.333 405.333"
+                            style="enable-background:new 0 0 405.333 405.333;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M202.667,0C108.373,0,32,10.667,32,85.333V288c0,41.28,33.493,74.667,74.667,74.667l-32,32v10.667h256v-10.667l-32-32    c41.28,0,74.667-33.387,74.667-74.667V85.333C373.333,10.667,296.96,0,202.667,0z M106.667,320c-17.707,0-32-14.293-32-32    s14.293-32,32-32s32,14.293,32,32S124.373,320,106.667,320z M181.333,192H74.667V85.333h106.667V192z M298.667,320    c-17.707,0-32-14.293-32-32s14.293-32,32-32s32,14.293,32,32S316.373,320,298.667,320z M330.667,192H224V85.333h106.667V192z" />
+                                </g>
+                            </g>
+                        </svg>
+                        {{srh["train_type"]}}{{srh["train_num"]}}
+                    </div>
+                </div>
+                <div class="traininfor">
+                    <div class="subtraininforword">{{srh["dep_time"]}}</div>
+                </div>
+                <div class="traininfor">
+                    <div class="subtraininforword">{{srh["des_time"]}}</div>
+                </div>
+                <div class="traininfor">
+                    <div class="subtraininforword">1小時22分</div>
+                </div>
+                <div class="traininfor">
+                    <div class="subtraininforword">${{srh["full"]}}</div>
+                </div>
+                <div class="traininfor">
+                    <div class="subtraininforword">${{srh["child"]}}</div>
+                </div>
+                <div class="traininfor">
+                    <div class="subtraininforword">${{srh["eld"]}}</div>
+                </div>
+                <div class="traininfor">
+                    {% if srh["remain"] == 0 %}
+                    <div class="subtraininforword redcol ">0位</div>
+                    {% else %}
+                    <div class="subtraininforword">{{srh["remain"]}}位</div>
+                    {% endif %}
+                </div>
+                <div class="traininfor">
+                    {% if srh["remain"] != 0 %}
+                    <form action="#" method="POST">
+                        <input type="hidden" name="trainid" value='{{srh["train_id"]}}'>
+                        <input class="subtraininforword booking" type="submit" value="訂票">
+                    </form>
+                    {% else %}
+                    <div class="subtraininforword redcol">已無座位</div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</body>
+
+</html>

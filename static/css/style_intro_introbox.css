@@ -1,0 +1,72 @@
+.introbox{
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 92.7vh;
+    padding: 0 15%;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity .5s;
+}
+.relintrobox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.introcard{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 90%;
+    height: 75%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.relintrocard{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.introimg{
+    position: absolute;
+    top: -25%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.introimg img{
+   width: 100%;
+}
+.introbox_word{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    width: 60%;
+    padding: 1% 2%;
+    background-color: #000;
+    opacity: 50%;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 600;
+}
+.backintro{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: 5px 15px;
+    border:  #F94248 solid 2px;
+    font-size: 20px;
+    font-weight: 600;
+    color:  #F94248;
+    background-color: transparent;
+    transition: background-color .25s linear,color .25s linear;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.backintro:hover{
+    background-color:  #F94248;
+    color: #fff;
+}
+.backintro:focus{
+    outline: none;
+}

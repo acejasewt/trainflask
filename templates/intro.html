@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鐵路心旅行-車站景點</title>
+    <link rel="stylesheet" href="static/css/style_intro.css">
+    <link rel="stylesheet" href="static/css/style_intro_intro.css">
+    <link rel="stylesheet" href="static/css/style_intro_introbox.css">
+    <link rel="stylesheet" href="static/css/style_intro_carousel2.css">
+    <link rel="stylesheet" href="static/css/style_intro_carousel3.css">
+</head>
+
+<body>
+    <div class="bg_images">
+    </div>
+    <div class="content">
+        <header>
+            <div class="header_row">
+                <div class="logo">
+                    <a href="index"><img src="static/img/Group 1.png" alt="logo"></a>
+                </div>
+                <div class="header_bar">
+                    <ul>
+                        <li>
+                            <a href="index"><button class="header_btn header_btn_first">首頁</button></a>
+                        </li>
+                        <li>
+                            <a href="booking"><button class="header_btn header_btn_hover">火車訂票</button></a>
+                        </li>
+                        <li>
+                            <a href="intro"><button class="header_btn header_btn_hover clr_white">車站景點</button></a>
+                        </li>
+                        <li>
+                            <a href="knowledge"><button
+                                    class="header_btn header_btn_hover">台鐵知識王</button></a>
+                        </li>
+                        {% if not session['user'] %}
+                        <li>
+                            <a href="login"><button class="header_btn header_btn_hover">會員登入</button></a>
+                        </li>
+                    </ul>
+                    {% else %}
+                    </ul>
+                    <div class="btn_acc">
+                        <button class="header_btn btn_img">                    
+                            <img class="userimg" src="static/img/usrimg.jpg" alt="usrimg">
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown_link"><a href="overview">帳戶總覽</a></li>
+                                    <li class="dropdown_link"><a href="logout">登出</a></li>
+                                </ul>
+                            </div>
+                        </button>
+                    </div>
+                    {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="imagebox" id="imagebox">
+        <div class="image" onclick="visibility1();namereturn(this);" id="1">
+            <img src="static/img/lsc1.png" alt="">
+            <div class="imgbg"></div>
+            <div class="img_word">特色車站</div>
+        </div>
+        <div class="image" onclick="visibility2();namereturn(this);" id="2">
+            <img src="static/img/lsc2.png" alt="">
+            <div class="imgbg"></div>
+            <div class="img_word">鄰近景點</div>
+        </div>
+        <div class="image" onclick="visibility3();namereturn(this);" id="3">
+            <img src="static/img/lsc3.png" alt="">
+            <div class="imgbg"></div>
+            <div class="img_word">廢棄鐵路</div>
+        </div>
+    </div>
+    <div class="carouselbox">
+        <button class="back" id="back" onclick="back()">回上一頁</button>
+        <div class="carousel"  id="carousel">
+            <button class="carousel_btn pre" id="pre">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Layer_1" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;"
+                    xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M464.344,207.418l0.768,0.168H135.888l103.496-103.724c5.068-5.064,7.848-11.924,7.848-19.124    c0-7.2-2.78-14.012-7.848-19.088L223.28,49.538c-5.064-5.064-11.812-7.864-19.008-7.864c-7.2,0-13.952,2.78-19.016,7.844    L7.844,226.914C2.76,231.998-0.02,238.77,0,245.974c-0.02,7.244,2.76,14.02,7.844,19.096l177.412,177.412    c5.064,5.06,11.812,7.844,19.016,7.844c7.196,0,13.944-2.788,19.008-7.844l16.104-16.112c5.068-5.056,7.848-11.808,7.848-19.008    c0-7.196-2.78-13.592-7.848-18.652L134.72,284.406h329.992c14.828,0,27.288-12.78,27.288-27.6v-22.788    C492,219.198,479.172,207.418,464.344,207.418z" />
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <div class="carousel_img">
+                <div><img src="static/img/white.png" id="lastclone" class="opacity" alt=""></div>
+                <div onclick="introin(this)" id="0"><img src="static/img/lsc/侯硐貓村.jpg" alt=""></div>
+                <div onclick="introin(this)" id="1"><img src="static/img/lsc/內灣老街.jpg" alt=""></div>
+                <div onclick="introin(this)" id="2"><img src="static/img/lsc/十分瀑布.jpg" alt=""></div>
+                <div onclick="introin(this)" id="3"><img src="static/img/lsc/十分老街.jpg" alt=""></div>
+                <div onclick="introin(this)" id="4"><img src="static/img/lsc/台東鐵道藝術村.jpg" alt=""></div>
+                <div onclick="introin(this)" id="5"><img src="static/img/lsc/台泥DAKA園區.jpg" alt=""></div>
+                <div onclick="introin(this)" id="6"><img src="static/img/lsc/國立科學工藝博物館.jpg" alt=""></div>
+                <div onclick="introin(this)" id="7"><img src="static/img/lsc/大甲鎮瀾宮.JPG" alt=""></div>
+                <div onclick="introin(this)" id="8"><img src="static/img/lsc/奇美博物館.jpg" alt=""></div>
+                <div onclick="introin(this)" id="9"><img src="static/img/lsc/客家圓樓.jpg" alt=""></div>
+                <div onclick="introin(this)" id="10"><img src="static/img/lsc/崎頂子母隧道.jpg" alt=""></div>
+                <div onclick="introin(this)" id="11"><img src="static/img/lsc/扇形車庫.jpg" alt=""></div>
+                <div onclick="introin(this)" id="12"><img src="static/img/lsc/星巴克新豐門市.jpg" alt=""></div>
+                <div onclick="introin(this)" id="13"><img src="static/img/lsc/林先生廟.jpg" alt=""></div>
+                <div onclick="introin(this)" id="14"><img src="static/img/lsc/橋頭糖廠.jpg" alt=""></div>
+                <div onclick="introin(this)" id="15"><img src="static/img/lsc/櫻木平交道.jpg" alt=""></div>
+                <div onclick="introin(this)" id="16"><img src="static/img/lsc/水里蛇窯.jpg" alt=""></div>
+                <div onclick="introin(this)" id="17"><img src="static/img/lsc/池上飯包文化故事館.jpg" alt=""></div>
+                <div onclick="introin(this)" id="18"><img src="static/img/lsc/海洋科技博物館.jpg" alt=""></div>
+                <div onclick="introin(this)" id="19"><img src="static/img/lsc/深澳鐵道自行車.jpg" alt=""></div>
+                <div onclick="introin(this)" id="20"><img src="static/img/lsc/湯圍溝溫泉公園.jpg" alt=""></div>
+                <div onclick="introin(this)" id="21"><img src="static/img/lsc/玉里舊鐵橋.jpg" alt=""></div>
+                <div onclick="introin(this)" id="22"><img src="static/img/lsc/福井食堂.jpg" alt=""></div>
+                <div onclick="introin(this)" id="23"><img src="static/img/lsc/福隆海水浴場.jpg" alt=""></div>
+                <div onclick="introin(this)" id="24"><img src="static/img/lsc/羅東林業文化園區.jpg" alt=""></div>
+                <div onclick="introin(this)" id="25"><img src="static/img/lsc/臺中舊火車站.jpg" alt=""></div>
+                <div onclick="introin(this)" id="26"><img src="static/img/lsc/菁桐老街.jpg" alt=""></div>
+                <div onclick="introin(this)" id="27"><img src="static/img/lsc/蓮池潭.jpg" alt=""></div>
+                <div onclick="introin(this)" id="28"><img src="static/img/lsc/赤崁樓.jpg" alt=""></div>
+                <div onclick="introin(this)" id="29"><img src="static/img/lsc/鐵道部園區.jpg" alt=""></div>
+                <div onclick="introin(this)" id="30"><img src="static/img/lsc/阿里山森林鐵路車庫園區.jpg" alt=""></div>
+                <div><img src="static/img/white.png" id="firstclone" class="opacity" alt=""></div>
+                <div><img src="static/img/white.png" id="firstclone" class="opacity" alt=""></div>
+                <div><img src="static/img/white.png" id="firstclone" class="opacity" alt=""></div>
+                <div><img src="static/img/white.png" id="firstclone" class="opacity" alt=""></div>
+            </div>
+            <button class="carousel_btn next" id="next">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Layer_1" x="0px" y="0px" viewBox="0 0 492.004 492.004"
+                    style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z" />
+                        </g>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="carouselbox2">
+        <button class="back2" id="back2" onclick="back2()">回上一頁</button>
+        <div class="carousel2" id="carousel2">
+            <button class="carousel_btn2 pre" id="pre2">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Layer_1" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;"
+                    xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M464.344,207.418l0.768,0.168H135.888l103.496-103.724c5.068-5.064,7.848-11.924,7.848-19.124    c0-7.2-2.78-14.012-7.848-19.088L223.28,49.538c-5.064-5.064-11.812-7.864-19.008-7.864c-7.2,0-13.952,2.78-19.016,7.844    L7.844,226.914C2.76,231.998-0.02,238.77,0,245.974c-0.02,7.244,2.76,14.02,7.844,19.096l177.412,177.412    c5.064,5.06,11.812,7.844,19.016,7.844c7.196,0,13.944-2.788,19.008-7.844l16.104-16.112c5.068-5.056,7.848-11.808,7.848-19.008    c0-7.196-2.78-13.592-7.848-18.652L134.72,284.406h329.992c14.828,0,27.288-12.78,27.288-27.6v-22.788    C492,219.198,479.172,207.418,464.344,207.418z" />
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <div class="carousel_img2">
+                <div><img src="static/img/white.png" id="lastclone" class="opacity" alt=""></div>
+                <div onclick="introin2(this)" id="0"><img src="static/img/station/三貂嶺車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="1"><img src="static/img/station/內獅車站.JPG" alt=""></div>
+                <div onclick="introin2(this)" id="2"><img src="static/img/station/八斗子車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="3"><img src="static/img/station/勝興車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="4"><img src="static/img/station/合興車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="5"><img src="static/img/station/和仁車站.JPG" alt=""></div>
+                <div onclick="introin2(this)" id="6"><img src="static/img/station/多良車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="7"><img src="static/img/station/大華車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="8"><img src="static/img/station/太麻里車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="9"><img src="static/img/station/山里車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="10"><img src="static/img/station/崎頂車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="11"><img src="static/img/station/成功車站.JPG" alt=""></div>
+                <div onclick="introin2(this)" id="12"><img src="static/img/station/望古車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="13"><img src="static/img/station/枋山車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="14"><img src="static/img/station/牡丹車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="15"><img src="static/img/station/石城車站.JPG" alt=""></div>
+                <div onclick="introin2(this)" id="16"><img src="static/img/station/石榴車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="17"><img src="static/img/station/石龜車站.jpg" alt=""></div>
+                <div onclick="introin2(this)" id="18"><img src="static/img/station/追分車站.JPG" alt=""></div>
+                <div onclick="introin2(this)" id="19"><img src="static/img/station/集集車站.jpg" alt=""></div>
+                <div><img src="static/img/white.png" id="firstclone" class="opacity" alt=""></div>
+                <div><img src="static/img/white.png" id="firstclone" class="opacity" alt=""></div>
+            </div>
+            <button class="carousel_btn2 next" id="next2">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Layer_1" x="0px" y="0px" viewBox="0 0 492.004 492.004"
+                    style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z" />
+                        </g>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="carouselbox3">
+        <button class="back3" id="back3" onclick="back3()">回上一頁</button>
+        <div class="carousel3" id="carousel3">
+            <button class="carousel_btn3 pre" id="pre3">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Layer_1" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;"
+                    xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M464.344,207.418l0.768,0.168H135.888l103.496-103.724c5.068-5.064,7.848-11.924,7.848-19.124    c0-7.2-2.78-14.012-7.848-19.088L223.28,49.538c-5.064-5.064-11.812-7.864-19.008-7.864c-7.2,0-13.952,2.78-19.016,7.844    L7.844,226.914C2.76,231.998-0.02,238.77,0,245.974c-0.02,7.244,2.76,14.02,7.844,19.096l177.412,177.412    c5.064,5.06,11.812,7.844,19.016,7.844c7.196,0,13.944-2.788,19.008-7.844l16.104-16.112c5.068-5.056,7.848-11.808,7.848-19.008    c0-7.196-2.78-13.592-7.848-18.652L134.72,284.406h329.992c14.828,0,27.288-12.78,27.288-27.6v-22.788    C492,219.198,479.172,207.418,464.344,207.418z" />
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <div class="carousel_img3">
+                <div><img src="static/img/white.png" id="firstclone" class="opacity" alt=""></div>
+                <div onclick="introin3(this)" id="0"><img src="static/img/secret/富岡車輛基地.jpg" alt=""></div>
+                <div onclick="introin3(this)" id="1"><img src="static/img/secret/桃林鐵馬道.jpg" alt=""></div>
+                <div onclick="introin3(this)" id="2"><img src="static/img/secret/臺東舊站.jpg" alt=""></div>
+                <div onclick="introin3(this)" id="3"><img src="static/img/secret/魚藤坪斷橋.jpg" alt=""></div>
+                <div><img src="static/img/white.png" id="firstclone" class="opacity" alt=""></div>
+            </div>
+            <button class="carousel_btn3 next" id="next3">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Layer_1" x="0px" y="0px" viewBox="0 0 492.004 492.004"
+                    style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path
+                                d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z" />
+                        </g>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="introbox" id="introbox">
+        <div class="relintrobox">
+            <button class="backintro" id="backintro" onclick="backtointro()">回上一頁</button>
+            <div class="introcard">
+                <div class="relintrocard">
+                    <div class="introimg">
+                        <img src="static/img/train/DR2800型.jpg" alt="" id="introimg">
+                    </div>
+                    <div class="introbox_word" id="introbox_word">產地：日本<br>製造商：東急車輛製造<br>用於：自強號<br>投入服務：1982年<br></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/script_intro_introin.js"></script>
+    <script src="static/js/script_intro.js"></script>
+    <script src="static/js/script_intro_intro.js"></script>
+    <script src="static/js/script_intro_intro2.js"></script>
+    <script src="static/js/script_intro_intro3.js"></script>
+    <script src="static/js/script_introin2.js"></script>
+    <script src="static/js/script_introin3.js"></script>
+    <script src="static/js/script_backtointro.js"></script>
+</body>
+
+</html>

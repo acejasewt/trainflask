@@ -1,0 +1,248 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft JhengHei";
+    position: relative;
+}
+.contentbox{
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+.contentimg{
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+.contentimg img{
+    height: 100%;
+}
+.loginbox{
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100vh;
+    padding: 2% 5%;
+    position: relative;
+}
+.back{
+    width: 10%;
+    height: 8%;
+    padding: 0 3px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+.back .backicon{
+    fill: #000;
+    width: 60%;
+    height: 100%;
+}
+.back:hover .backicon{
+    fill: #FF9900;
+}
+.logintitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-top: 8%;
+}
+.logintitle h2{
+    display: inline-block;
+    font-weight: 600;
+    color: rgb(54, 54, 54);
+    margin-left: 20px;
+    border-bottom:  3px solid #FF9900;
+}
+.formbox{
+    width: 90%;
+    margin: 2% 0;
+    padding: 0 20px;
+}
+
+.inputbox{
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0 0 3px;
+    border-bottom: 2px solid #d9d9d9;
+}
+.inputbox::after, .inputbox::before{
+    content:"";
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #FF9900;
+    transition: .3s;
+}
+.inputbox::after{
+    right: 50%;
+}
+.inputbox::before{
+    left: 50%;
+}
+.inputbox.focus .i i {
+    color: #FF9900;
+}
+.inputbox.focus div h5{
+    top: 3px;
+    font-size: 12px;
+}
+.inputbox.focus::after, .inputbox.focus::before{
+    width: 50%;
+}
+.inputbox.focus .input{
+    color: #FF9900;
+}
+.i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+.i i{
+    color: #d9d9d9;
+    transition: .3s;
+}
+.inputbox>div{
+    position: relative;
+    height: 45px;
+}
+.inputbox>div h5{
+    position:absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 16px;
+    transition: .3s;
+    padding-top: 0.6rem;
+}
+
+.input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0.5rem 0.7rem 0 0.5rem;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.loginbtn{
+    display: block;
+    width: 60%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    background-color: #FF9900;
+    cursor: pointer;
+    color: #fff;
+    margin: 5% auto;
+    border: 2px solid #FF9900;
+    transition: .3s;
+}
+.loginbtn:hover{
+    color: #FF9900;
+    background-color: transparent;
+}
+.robotdetect{
+    text-align: right;
+}
+.robotbtn{
+    background-color: transparent;
+    padding: 3px  5px;
+    outline: none;
+    border: 2px solid #F94248;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.robotbtn:hover{
+    background-color: #F94248;
+}
+.robotbtn:hover a{
+    color: #fff;
+}
+.robotbtn a{
+    text-decoration: none;
+    font-size: 15px;
+    color: #F94248;
+    font-weight: 600;
+}
+.note{
+    text-align: right;
+}
+.note a{
+    color: #999;
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 5px;
+}
+.note a:hover{
+    color:#000;
+    text-decoration: underline;
+}
+.useotherbox{
+    width: 90%;
+    margin-top: 12%;
+}
+.othertitle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+.leftline{
+    width: 34%;
+    height: 1px;
+    background-color: #c2c2c2;
+}
+.useother{
+    color: #c2c2c2;
+    width: 32%;
+    font-size: 13px;
+    text-align: center;
+}
+.rightline{
+    width: 34%;
+    height: 1px;
+    background-color: #c2c2c2;
+}
+.logobox{
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform .3s;
+}
+.logo:nth-child(2){
+    margin: 0 10% ;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.logo svg{
+    width: 100%;
+    height: 100%;
+}
+.inputbox div.opac h5{
+    opacity: 0;
+}

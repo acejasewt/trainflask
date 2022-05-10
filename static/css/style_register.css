@@ -1,0 +1,134 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft JhengHei";
+}
+
+body{
+    background-image: linear-gradient(rgba(38,38,38,0.4),rgba(38,38,38,0.4)),url('../img/register.jpg');
+    background-size: 100% auto;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: animatedBackground 0.8s linear;
+    animation-fill-mode: forwards;
+}
+@keyframes animatedBackground {
+    from {
+      background-size: 115% auto;
+    }
+    to {
+      background-size: 100% auto;
+    }
+}
+.registerbox{
+    width: 32%;
+    height: 90%;
+    background-color: rgba(255,255,255, 90%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px #161616;
+    position: relative;
+}
+
+.back{
+    width: 12%;
+    height: 7%;
+    padding: 5px 5px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+.back .backicon{
+    fill: #000;
+    width: 60%;
+    height: 100%;
+}
+.back:hover .backicon{
+    fill: #FF9900;
+}
+.registertitle{
+    margin-left: 10%;
+}
+.registertitle h2{
+    display: inline-block;
+    font-weight: 600;
+    color: rgb(54, 54, 54);
+    border-bottom:  3px solid #FF9900;
+}
+.inputbox{
+    margin-top: 1.8%;
+}
+.inputbox.focus h5{
+    color: #FF9900;
+}
+.inputbox.focus .input{
+    border-bottom: 1.5px solid #FF9900;
+    color: #FF9900;
+}
+.inputbox.focus .i i {
+    color: #FF9900;
+}
+.inputbox.focus .i{
+    border-right: 1.5px solid #FF9900;
+}
+
+.inputbox h5{
+    margin-top: 8px;
+    margin-bottom: 5px;
+    color: rgba(38,38,38);
+    transition: .3s;
+}
+.formbox{
+    padding: 0 10%;
+    margin-top: 7%;
+}
+.inputform{
+    position: relative;
+}
+.i{
+    position: absolute;
+    bottom: 15%;
+    left: 1.5%;
+    border-right: 1.5px solid rgb(175, 175, 175);
+    padding-right: 1.5%;
+    width: 25px;
+    transition: .5s;
+}
+.i i{
+    color: rgb(175, 175, 175);
+    transition: .5s;
+}
+.input{
+    padding-left: 12%;
+    height: 28px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgb(175, 175, 175);
+    color: rgb(175, 175, 175);
+    width: 100%;
+    transition: .5s;
+}
+.registerbtn{
+    display: block;
+    width: 60%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    background-color: #FF9900;
+    cursor: pointer;
+    color: #fff;
+    margin: 8% auto;
+    border: 2px solid #FF9900;
+    transition: .3s;
+}
+.registerbtn:hover{
+    color: #FF9900;
+    background-color: transparent;
+}

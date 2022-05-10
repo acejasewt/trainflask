@@ -1,0 +1,390 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft JhengHei";
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF9900;
+    height: 60px;
+    padding: 0 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+.logo{
+    background-color: white;
+    height: 80%;
+    padding: 5px 30px;
+    border-radius: 5px;
+}
+.logo img{
+    height: 100%;
+}
+.header_bar{
+    display: flex;
+    align-items: center;
+}
+.header_bar ul{
+    list-style: none;
+}
+.header_bar ul li{
+    display: inline;
+}
+.header_btn{
+    padding: 3px 10px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20px;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+}
+.header_btn:focus{
+    outline: none;
+}
+.header_btn_hover{
+    transition: color .3s;
+}
+.header_btn_hover:hover{
+    transform: scale(1.1);
+    color: #fff;
+}
+.btn_acc{
+    margin-left: 25px;
+}
+.btn_img{
+    margin: 0;
+    position: relative;
+}
+.btn_img:hover{
+    transform: scale(1.1);
+}
+.userimg{
+    border-radius: 50%;
+    width: 30px;
+}
+.dropdown ul{
+    list-style: none;
+}
+.dropdown ul li{
+    display: inline-block;
+}
+.dropdown{
+    position: absolute;
+    top: 100%;
+    right: 20%;
+    width: 120px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #e9e9e9;
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .3s;
+}
+.dropdown_link{
+    padding: 16px 10px;
+    width: 100%;
+    transition: background-color .3s;
+    text-align: left;
+}
+.dropdown_link a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+.dropdown_link:hover{
+    background-color: #ffd79b;
+}
+.dropdown_link:hover a{
+    color: #fff;
+}
+.btn_img:hover .dropdown{
+    transform: translate(0,0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.contentbox{
+    display: flex;
+}
+.funcbar{
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding-top: 60px;
+    height: 100%;
+    background-color: #1c1c1c;
+    position: fixed;
+}
+.content{
+    position: relative;
+    flex: 0 0 80%;
+    max-width: 80%;
+    padding: 60px 8% 100px 8%;
+    height: 100%;
+    margin-left: 15%;
+}
+.funcbar a{
+    text-decoration: none;
+}
+.funcusr{
+    margin: 30px auto;
+    width: 30%;
+}
+.funcusr img{
+    width: 100%;
+    border-radius: 50%;
+}
+.barlist{
+    display: flex;
+    padding: 25px 30px 25px 30px;
+    align-items: center;
+    border-top: 1px solid #242424;
+    border-bottom: 1px solid #242424;
+    border-left: 5px solid #242424;
+}
+.i{
+    width: 30px;
+    display: flex;
+    justify-content: center;
+}
+.i i{
+    color: #c1c3c6;
+    font-size: 18px;
+}
+.barword{
+    margin-left: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #c1c3c6;
+}
+.barfocus div{
+    color: #fff;
+}
+.barfocus div i{
+    color: #fff;
+}
+.barfocus{
+    border-left: 5px solid #FF9900;
+}
+.barlist:hover div{
+    color: #fff;
+}
+.barlist:hover div i{
+    color: #fff;
+}
+.barlist:hover{
+    border-left: 5px solid #FF9900;
+}
+.contenttitle{
+    margin-top: 50px;
+    font-size: 65px;
+    font-weight: 800;
+}
+.subtitle{
+    margin-top: 40px;
+    font-size: 35px;
+    font-weight: 800;
+}
+.infobox{
+    margin-top: 35px;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #dedede 1px solid;
+    margin-top: 25px;
+    padding: 15px 0;
+    font-size: 25px;
+}
+.infotitle{
+    color: #9e9e9e;
+}
+.infocontent{
+    font-weight: 600;
+}
+.editbox{
+    margin: 55px 0;
+}
+.editbtn{
+    padding: 20px 55px;
+    border: 3px solid #757575;
+    color: #757575;
+    font-size: 25px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+.editlink{
+    text-decoration: none;
+}
+.editbtn:hover{
+    border-color: #000;
+    color: #000;
+}
+.subtil2{
+    margin-top: 100px;
+}
+
+
+.jrtitlebox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid #9e9e9e;
+}
+.leftjrbox,.locbox,.tmebox{
+    display: flex;
+    align-items: center;
+}
+.locbox{
+    font-size: 25px;
+    font-weight: 600;
+    background-color: #FF9900;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+}
+.arrowloc{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+.arrowloc i{
+    color: #fff;
+    font-size: 18px;
+}
+.ticket{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+.tmebox{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 35px;
+}
+.train{
+    margin-left: 35px;
+}
+.tmei{
+    margin: 0 8px;
+    display: flex;
+    align-items: center;
+}
+.tmei i{
+    font-size: 16px;
+    color: #000;
+}
+.datebox{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 35px;
+}
+
+
+.ticbox{
+    display: flex;
+    align-items: center;
+}
+.rmtic{
+    margin-left: 15px;
+}
+.rmtic a{
+    text-decoration: none;
+    color: #F94248;
+    font-size: 14px;
+    font-weight: 600;
+}
+.rmtic>a:hover{
+    text-decoration: underline;
+}
+
+.flexbox{
+    position: relative;
+    margin-top: 40px;
+    border-bottom: 2px solid #9e9e9e;
+}
+.inputbox{
+    width: 100%;
+    padding-bottom: 10px;
+}
+.input{
+    width: 100%;
+    background-color: transparent;
+    text-align: right;
+    outline: none;
+    border: none;
+    font-size: 23px;
+    font-weight: 600;
+    color: #9e9e9e;
+}
+.inputi{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 6%;
+    left: 0;
+    font-size: 25px;
+    background-color: #fff;
+}
+.inputi h5{
+    margin-left: 15px;
+    transition: color .3s;
+}
+.inputi i{
+    font-size: 20px;
+    transition: color .3s;
+}
+.flexbox.focus .inputi i,.flexbox.focus .inputi h5,.flexbox.focus .input{
+    color: #FF9900;
+}
+.flexbox::after, .flexbox::before{
+    content:"";
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #FF9900;
+    transition: .3s;
+}
+.flexbox::after{
+    right: 50%;
+}
+.flexbox::before{
+    left: 50%;
+}
+.flexbox.focus::after, .flexbox.focus::before{
+    width: 50%;
+}
+.updbtn{
+    display: block;
+    width: 60%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    background-color: #FF9900;
+    cursor: pointer;
+    color: #fff;
+    margin: 5% auto;
+    border: 2px solid #FF9900;
+    transition: .3s;
+}
+.updbtn:hover{
+    color: #FF9900;
+    background-color: transparent;
+}

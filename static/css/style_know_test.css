@@ -1,0 +1,74 @@
+.know{
+    opacity: 0;
+    transition: opacity .5s;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    width: 50%;
+}
+.testbox{
+    width: 45%;
+    cursor: pointer;
+    position: relative;
+    filter: grayscale(100%);
+    transition: filter .5s linear;
+}
+.testbox img{
+    width: 100%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 60px #000;
+}
+.testword{
+    position: absolute;
+    top: 28%;
+    left: 13%;
+    width: 100%;
+    color: #000;
+    font-size: 150px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+.testbox:hover .testword{
+    opacity: 50%;
+}
+.testbox:hover{
+    filter: none;
+}
+.testbg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 20%;
+    border-radius: 50px;
+}
+.back2{
+    position: absolute;
+    top: -12%;
+    left: 0;
+    opacity: 0;
+    padding: 5px 15px;
+    border:  #F94248 solid 2px;
+    font-size: 20px;
+    font-weight: 600;
+    color:  #F94248;
+    background-color: transparent;
+    border-radius: 20px;
+    transition: opacity .5s,background-color .25s linear,color .25s linear;
+    cursor: pointer;
+    z-index: 3;
+}
+.back2:hover{
+    background-color:  #F94248;
+    color: #fff;
+}
+.back2:focus{
+    outline: none;
+}
